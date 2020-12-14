@@ -1,7 +1,11 @@
 # IntelliJ IDEA
 .idea/
 *.iml
+
+# Maven
 target/
+mvnw*
+.mvn/
 
 # Compiled class file
 *.class
