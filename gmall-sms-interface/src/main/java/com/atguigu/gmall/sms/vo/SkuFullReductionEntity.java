@@ -1,4 +1,4 @@
-package com.atguigu.gmall.sms.entity;
+package com.atguigu.gmall.sms.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -7,17 +7,19 @@ import java.math.BigDecimal;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
- * 商品阶梯价格
+ * 商品满减信息
  * 
  * @author Jiaming
  * @email 849519112@qq.com
  * @date 2020-12-15 09:08:32
  */
 @Data
-@TableName("sms_sku_ladder")
-public class SkuLadderEntity implements Serializable {
+@TableName("sms_sku_full_reduction")
+@Accessors(chain = true)
+public class SkuFullReductionEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -30,15 +32,15 @@ public class SkuLadderEntity implements Serializable {
 	 */
 	private Long skuId;
 	/**
-	 * 满几件
+	 * 满多少
 	 */
-	private Integer fullCount;
+	private BigDecimal fullPrice;
 	/**
-	 * 打几折
+	 * 减多少
 	 */
-	private BigDecimal discount;
+	private BigDecimal reducePrice;
 	/**
-	 * 是否叠加其他优惠[0-不可叠加，1-可叠加]
+	 * 是否参与其他优惠
 	 */
 	private Integer addOther;
 

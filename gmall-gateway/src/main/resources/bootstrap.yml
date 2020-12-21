@@ -4,4 +4,10 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: 8.133.178.39:12359
+        namespace: d8713209-6b72-4589-9411-be0a400c6e87
+        group: gateway
+        file-extension: yml
+        ext-config:
+          - group: DEFAULT_GROUP
+            dataId: common.yml

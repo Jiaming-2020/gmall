@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.atguigu.gmall.sms.entity.SkuFullReductionEntity;
+import com.atguigu.gmall.sms.vo.SkuFullReductionEntity;
 import com.atguigu.gmall.sms.service.SkuFullReductionService;
 import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.ResponseVo;
@@ -63,7 +62,7 @@ public class SkuFullReductionController {
     @PostMapping
     @ApiOperation("保存")
     public ResponseVo<Object> save(@RequestBody SkuFullReductionEntity skuFullReduction){
-		skuFullReductionService.save(skuFullReduction);
+		skuFullReductionService.bigSave(skuFullReduction);
 
         return ResponseVo.ok();
     }

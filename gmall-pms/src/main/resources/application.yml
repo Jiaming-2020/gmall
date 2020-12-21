@@ -9,3 +9,13 @@ mybatis-plus:
 feign:
   sentinel:
     enabled: true
+spring:
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: gmall-tx-group
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout:  5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000

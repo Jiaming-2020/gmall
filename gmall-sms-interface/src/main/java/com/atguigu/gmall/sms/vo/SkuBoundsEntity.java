@@ -1,4 +1,4 @@
-package com.atguigu.gmall.sms.entity;
+package com.atguigu.gmall.sms.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * 商品spu积分设置
@@ -17,6 +18,7 @@ import lombok.Data;
  */
 @Data
 @TableName("sms_sku_bounds")
+@Accessors(chain = true)
 public class SkuBoundsEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
