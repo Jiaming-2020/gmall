@@ -42,6 +42,11 @@ public class SpuController {
         return ResponseVo.ok(spuService.querySpuPageByCategoryId(categoryId, pageParamVo));
     }
 
+    @PostMapping("page")
+    public ResponseVo<List<SpuEntity>> querySpuByPageJson(@RequestBody PageParamVo paramVo) {
+        return ResponseVo.ok((List<SpuEntity>) spuService.queryOnlinePage(paramVo).getList());
+    }
+
     /**
      * 列表
      */

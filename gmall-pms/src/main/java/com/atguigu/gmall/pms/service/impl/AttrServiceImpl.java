@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -14,6 +15,7 @@ import com.atguigu.gmall.common.bean.PageParamVo;
 import com.atguigu.gmall.pms.mapper.AttrMapper;
 import com.atguigu.gmall.pms.entity.AttrEntity;
 import com.atguigu.gmall.pms.service.AttrService;
+import org.springframework.util.CollectionUtils;
 
 
 @Service("attrService")
@@ -42,4 +44,12 @@ public class AttrServiceImpl extends ServiceImpl<AttrMapper, AttrEntity> impleme
         return this.list(queryWrapper);
     }
 
+    @Override
+    public List<AttrEntity> querySearchAttrEntitiesByCid(Long cid) {
+        QueryWrapper<AttrEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("category_id", cid);
+        queryWrapper.eq("search_type", 1);
+        List<AttrEntity> attrEntities = baseMapper.selectList(queryWrapper);
+        return attrEntities;
+    }
 }

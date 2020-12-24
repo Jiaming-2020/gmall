@@ -8,7 +8,7 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
 
 import com.atguigu.gmall.sms.mapper.SkuLadderMapper;
-import com.atguigu.gmall.sms.vo.SkuLadderEntity;
+import com.atguigu.gmall.sms.entity.SkuLadderEntity;
 import com.atguigu.gmall.sms.service.SkuLadderService;
 import org.springframework.transaction.annotation.Transactional;
 

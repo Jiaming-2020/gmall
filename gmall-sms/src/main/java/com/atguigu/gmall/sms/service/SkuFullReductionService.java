@@ -3,7 +3,7 @@ package com.atguigu.gmall.sms.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
-import com.atguigu.gmall.sms.vo.SkuFullReductionEntity;
+import com.atguigu.gmall.sms.entity.SkuFullReductionEntity;
 
 /**
  * 商品满减信息

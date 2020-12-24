@@ -3,7 +3,7 @@ package com.atguigu.gmall.pms.vo;
 import com.atguigu.gmall.pms.entity.SkuAttrValueEntity;
 import com.atguigu.gmall.pms.entity.SkuEntity;
 import com.atguigu.gmall.pms.entity.SkuImagesEntity;
-import com.atguigu.gmall.sms.vo.*;
+import com.atguigu.gmall.sms.entity.*;
 import lombok.Data;
 
 import java.math.BigDecimal;

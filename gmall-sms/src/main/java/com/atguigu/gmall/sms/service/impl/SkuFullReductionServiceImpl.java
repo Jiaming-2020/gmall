@@ -8,7 +8,7 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
 
 import com.atguigu.gmall.sms.mapper.SkuFullReductionMapper;
-import com.atguigu.gmall.sms.vo.SkuFullReductionEntity;
+import com.atguigu.gmall.sms.entity.SkuFullReductionEntity;
 import com.atguigu.gmall.sms.service.SkuFullReductionService;
 import org.springframework.transaction.annotation.Transactional;
 

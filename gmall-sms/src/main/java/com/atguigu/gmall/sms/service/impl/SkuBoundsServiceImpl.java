@@ -8,7 +8,7 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
 
 import com.atguigu.gmall.sms.mapper.SkuBoundsMapper;
-import com.atguigu.gmall.sms.vo.SkuBoundsEntity;
+import com.atguigu.gmall.sms.entity.SkuBoundsEntity;
 import com.atguigu.gmall.sms.service.SkuBoundsService;
 import org.springframework.transaction.annotation.Transactional;
 

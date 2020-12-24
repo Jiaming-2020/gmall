@@ -1,10 +1,14 @@
 package com.atguigu.gmall.pms.service.impl;
 
+import com.atguigu.gmall.pms.entity.AttrEntity;
+import com.atguigu.gmall.pms.mapper.AttrMapper;
 import com.atguigu.gmall.pms.vo.SkuVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -16,10 +20,13 @@ import com.atguigu.gmall.pms.mapper.SkuAttrValueMapper;
 import com.atguigu.gmall.pms.entity.SkuAttrValueEntity;
 import com.atguigu.gmall.pms.service.SkuAttrValueService;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 
 @Service("skuAttrValueService")
 public class SkuAttrValueServiceImpl extends ServiceImpl<SkuAttrValueMapper, SkuAttrValueEntity> implements SkuAttrValueService {
+    @Autowired
+    private AttrMapper attrMapper;
 
     @Override
     public PageResultVo queryPage(PageParamVo paramVo) {
@@ -39,6 +46,11 @@ public class SkuAttrValueServiceImpl extends ServiceImpl<SkuAttrValueMapper, Sku
                 skuAttrValueEntity.setSkuId(skuVO.getId())
         );
         this.saveBatch(skuAttrValueEntities);
+    }
+
+    @Override
+    public List<SkuAttrValueEntity> querySearchSkuAttrValuesBySkuIdInAttrIds(Long skuId, List<Long> attrIds) {
+        return baseMapper.selectList(new QueryWrapper<SkuAttrValueEntity>().eq("sku_id", skuId).in("attr_id", attrIds));
     }
 
 }

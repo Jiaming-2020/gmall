@@ -24,5 +24,7 @@ public interface SpuService extends IService<SpuEntity> {
     void bigSave(SpuVO spuVO);
 
     void txSave(SpuVO spuVO);
+
+    PageResultVo queryOnlinePage(PageParamVo paramVo);
 }
 

@@ -1,9 +1,9 @@
 package com.atguigu.gmall.pms.feign;
 
 import com.atguigu.gmall.common.bean.ResponseVo;
-import com.atguigu.gmall.sms.vo.SkuBoundsEntity;
-import com.atguigu.gmall.sms.vo.SkuFullReductionEntity;
-import com.atguigu.gmall.sms.vo.SkuLadderEntity;
+import com.atguigu.gmall.sms.entity.SkuBoundsEntity;
+import com.atguigu.gmall.sms.entity.SkuFullReductionEntity;
+import com.atguigu.gmall.sms.entity.SkuLadderEntity;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,9 +1,9 @@
 package com.atguigu.gmall.sms.feign;
 
 import com.atguigu.gmall.common.bean.ResponseVo;
-import com.atguigu.gmall.sms.vo.SkuBoundsEntity;
-import com.atguigu.gmall.sms.vo.SkuFullReductionEntity;
-import com.atguigu.gmall.sms.vo.SkuLadderEntity;
+import com.atguigu.gmall.sms.entity.SkuBoundsEntity;
+import com.atguigu.gmall.sms.entity.SkuFullReductionEntity;
+import com.atguigu.gmall.sms.entity.SkuLadderEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 

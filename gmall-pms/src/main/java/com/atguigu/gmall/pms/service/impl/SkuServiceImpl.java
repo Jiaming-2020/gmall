@@ -5,7 +5,6 @@ import com.atguigu.gmall.pms.service.SkuAttrValueService;
 import com.atguigu.gmall.pms.service.SkuImagesService;
 import com.atguigu.gmall.pms.vo.SkuVO;
 import com.atguigu.gmall.pms.vo.SpuVO;
-import com.atguigu.gmall.sms.vo.SkuBoundsEntity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

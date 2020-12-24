@@ -8,6 +8,7 @@ import com.atguigu.gmall.pms.vo.SpuAttrValueVO;
 import com.atguigu.gmall.pms.vo.SpuVO;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,8 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
     private SpuAttrValueService spuAttrValueService;
     @Autowired
     private SkuService skuService;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     @Override
     public PageResultVo queryPage(PageParamVo paramVo) {
@@ -73,12 +76,23 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
         //保存Skus
         skuService.bigSave(spuVO);
 //        int i=1/0;
+        rabbitTemplate.convertAndSend("PMS_ITEM_EXCHANGE", "item.insert", spuVO.getId());
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void txSave(SpuVO spuVO) {
         this.save(spuVO);
+    }
+
+    @Override
+    public PageResultVo queryOnlinePage(PageParamVo paramVo) {
+        IPage<SpuEntity> page = this.page(
+                paramVo.getPage(),
+                new QueryWrapper<SpuEntity>().eq("publish_status", 1)
+        );
+
+        return new PageResultVo(page);
     }
 
 }
