@@ -5,7 +5,7 @@ import com.atguigu.gmall.search.feign.PmsFeignClient;
 import com.atguigu.gmall.search.feign.WmsFeignClient;
 import com.atguigu.gmall.search.pojo.Goods;
 import com.atguigu.gmall.search.pojo.SearchAttrValueVO;
-import entity.WareSkuEntity;
+import com.atguigu.gmall.wms.entity.WareSkuEntity;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 

@@ -17,7 +17,7 @@ public class SpuVO extends SpuEntity {
 
     public void setSpuImages(List<String> spuImages) {
         spuDescEntity = new SpuDescEntity();
-        spuDescEntity.setDecript(StringUtils.join(spuImages, ","));
+        spuDescEntity.setDescription(StringUtils.join(spuImages, ","));
     }
 
     public void setBaseAttrs(List<SpuAttrValueVO> baseAttrs) {

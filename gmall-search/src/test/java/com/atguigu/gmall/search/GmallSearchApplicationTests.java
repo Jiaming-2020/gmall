@@ -5,12 +5,9 @@ import com.atguigu.gmall.pms.entity.*;
 import com.atguigu.gmall.search.feign.PmsFeignClient;
 import com.atguigu.gmall.search.feign.WmsFeignClient;
 import com.atguigu.gmall.search.pojo.Goods;
-import com.atguigu.gmall.search.pojo.SearchAttrValueVO;
 import com.atguigu.gmall.search.repository.GoodsRepository;
 import com.atguigu.gmall.search.util.QueryUtils;
-import entity.WareSkuEntity;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
@@ -18,7 +15,6 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @SpringBootTest
 class GmallSearchApplicationTests {
